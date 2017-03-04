@@ -10,7 +10,7 @@
 	s += 1
 	Course.create!(
 		name: "course #{s}", 
-		description: "description #{s}"
+		description: "description #{s}",
 		image: "https://cdn.shopify.com/s/files/1/0394/9549/files/greatBritainFlag.png"
 		)
 end
