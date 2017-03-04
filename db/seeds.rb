@@ -8,5 +8,10 @@
 
 5.times do |s|
 	s += 1
-	Post.create!(title: "title #{s}", description: "description #{s}")
+	Course.create!(
+		name: "course #{s}", 
+		description: "description #{s}"
+		image: "https://cdn.shopify.com/s/files/1/0394/9549/files/greatBritainFlag.png"
+		)
 end
+
