@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'students/index'
+
+  get 'students/show'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,6 +15,9 @@ Rails.application.routes.draw do
    resources :courses
    resources :teachers
    resources :categories
+   resources :months
+   resources :payments
+   resources :students
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
