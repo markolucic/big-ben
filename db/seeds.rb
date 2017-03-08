@@ -54,7 +54,7 @@ Course.create(
 	image: "https://cdn.pixabay.com/photo/2012/04/11/15/33/spain-28530_960_720.png")
 =end #added
 
-1..9.each do |m|
+8.times do |m|
 	c=Course.find(m)
 	c.price = 50
 	c.save
