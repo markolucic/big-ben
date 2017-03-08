@@ -15,7 +15,7 @@
 		#)
 #end
 #
-
+=begin
 Course.create(
 	name: "Škola matematike",
 	description: "",
@@ -52,7 +52,16 @@ Course.create(
 	name: "Španski jezik",
 	description: "",
 	image: "https://cdn.pixabay.com/photo/2012/04/11/15/33/spain-28530_960_720.png")
+=end #added
 
+1..9.each do |m|
+	c=Course.find(m)
+	c.price = 50
+	c.save
+	m += 1
+end
+
+#not added
 =begin
 Teacher.create(
 	name: "Igor Gordic",
