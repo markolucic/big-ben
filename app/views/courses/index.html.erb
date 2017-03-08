@@ -1,0 +1,13 @@
+<% @courses.each do |c| %>
+	<div class="card">
+	  <div class="card-block">
+	    <p class="card-text"><%= c.name %></p>
+	  </div>
+	  <img src="/images/pathToYourImage.png" alt="Card image">
+	  <%= image_tag("https://big-ben.herokuapp.com#{c.image}") %>
+	  <div class="card-block">
+	    <p class="card-text">description</p>
+	  </div>
+	</div>
+<% end %>
+
