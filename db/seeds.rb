@@ -55,10 +55,10 @@ Course.create(
 =end #added
 
 8.times do |m|
+	m += 1
 	c=Course.find(m)
 	c.price = 50
 	c.save
-	m += 1
 end
 
 #not added
