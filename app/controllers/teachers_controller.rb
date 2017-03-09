@@ -2,7 +2,7 @@ class TeachersController < ApplicationController
 	before_action :set_teacher #only [:new, :create]
 
 	def index
-		@teachers = Teacher.all
+		@teachers = Teacher.all.order("id ASC")
 		render json: @teachers
 	end
 
