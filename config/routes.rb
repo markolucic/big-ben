@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
   mount_devise_token_auth_for 'User', at: 'auth'
-  
+
   get 'students/index'
 
   get 'students/show'
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
    resources :months
    resources :payments
    resources :students
+   resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
