@@ -28,7 +28,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'rails_12factor', group: :production
 
-
+gem 'devise_token_auth'
+gem 'omniauth'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
