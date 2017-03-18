@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   post 'user_token' => 'user_token#create'
   
   get 'students/index'
