@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
-  def index
+	before_action :authenticate_user, only: [:create, :edit, :update, :destroy]
+
+	def index
 		@students = Student.all
 		render json: @students
 	end

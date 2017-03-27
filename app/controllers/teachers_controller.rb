@@ -1,9 +1,10 @@
 class TeachersController < ApplicationController
 	before_action :set_teacher #only [:new, :create]
+	before_action :authenticate_user, only: [:create, :edit, :update, :destroy]
 
 	def index
 		@teachers = Teacher.all.order("id DESC")
-		render json: @teachers
+		render json: @teachers #, include: :courses
 	end
 
 	def new
@@ -13,10 +14,9 @@ class TeachersController < ApplicationController
 	def create
 		@teacher = Teacher.create(teacher_params)
 		if @teacher.save
-			flash[:success] = "Created successfuly."
-			#redirect_to @teachers
+			render json: @teacher, status: :created
 		else
-			render 'new'
+			render json: @teacher.errors, status: :unprocessable_entity 
 		end
 	end
 
@@ -28,8 +28,10 @@ class TeachersController < ApplicationController
 	end
 
 	def destroy
-		@teacher.destroy
-		flash[:notice] = "Deleted successfuly."
+		if @teacher.destroy
+			head :no_content, status: :ok
+		else
+			render json: @teacher.errors, status: :unprocessable_entity 
 	end
 
 	private
