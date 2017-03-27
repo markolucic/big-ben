@@ -32,6 +32,7 @@ class TeachersController < ApplicationController
 			head :no_content, status: :ok
 		else
 			render json: @teacher.errors, status: :unprocessable_entity 
+		end
 	end
 
 	private
