@@ -25,6 +25,11 @@ class TeachersController < ApplicationController
 	end
 
 	def update
+		if @teacher.update_attributes(teacher_params)
+			render json: @teacher, status: 200
+		else
+			render json: {}, status: 500
+		end
 	end
 
 	def destroy
