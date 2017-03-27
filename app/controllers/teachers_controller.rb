@@ -28,11 +28,8 @@ class TeachersController < ApplicationController
 	end
 
 	def destroy
-		if @teacher.destroy
-			render :nothing, status: :no_content
-		else
-			render json: @teacher.errors, status: :unprocessable_entity 
-		end
+		@teacher.destroy
+		render json: {}, status: :no_content
 	end
 
 	private
