@@ -29,7 +29,7 @@ class TeachersController < ApplicationController
 
 	def destroy
 		if @teacher.destroy
-			head :no_content, status: :ok
+			render :nothing, status: :no_content
 		else
 			render json: @teacher.errors, status: :unprocessable_entity 
 		end
@@ -41,6 +41,6 @@ class TeachersController < ApplicationController
 	end
 
 	def teacher_params
-		params.require(:teacher).permit(:name, :intro, :image)
+		params.require(:teacher).permit(:name, :intro, :image, :course)
 	end
 end
