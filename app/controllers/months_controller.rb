@@ -1,5 +1,5 @@
 class MonthsController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user, except: [:index]
 	before_action :set_month, only: [:show, :update, :destroy]
 
 	def index
