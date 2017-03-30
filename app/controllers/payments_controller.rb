@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
 	end
 
 	def show
-		render json: @payment
+		render json: @payment, include: 'student.course'
 	end
 
 	def create

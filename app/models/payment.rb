@@ -1,5 +1,5 @@
 class Payment < ActiveRecord::Base
-	belongs_to :course
+	belongs_to :course #ne treba kurs, jer ve postoji course_id u studentu
 	belongs_to :month
 	belongs_to :student
 	#januar, matematika, 20KM, 25.2.2016. Marko Lucic
