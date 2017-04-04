@@ -4,11 +4,11 @@ class PaymentsController < ApplicationController
 
 	def index
 		@payments = Payment.all
-		render json: @payments, include: 'month'
+		render json: @payments#, include: 'month'
 	end
 
 	def show
-		render json: @payment, include: 'student.course, month.name'
+		render json: @payment#, include: 'student.course, month'
 	end
 
 	def create
@@ -39,6 +39,6 @@ class PaymentsController < ApplicationController
 	end
 
 	def payment_params
-		params.require(:payment).permit(:month_id, :student_id, :course_id, :price)
+		params.require(:payment).permit(:month_id, :student_id, :course_id, :price, :year)
 	end
 end
