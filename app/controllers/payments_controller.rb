@@ -4,11 +4,11 @@ class PaymentsController < ApplicationController
 
 	def index
 		@payments = Payment.all
-		render json: @payments, include: 'student.course, month'
+		render json: @payments, include: 'month'
 	end
 
 	def show
-		render json: @payment, include: 'student.course, month'
+		render json: @payment, include: 'student.course, month.name'
 	end
 
 	def create
